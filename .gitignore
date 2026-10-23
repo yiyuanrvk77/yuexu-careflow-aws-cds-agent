@@ -1,0 +1,13 @@
+node_modules/
+.env
+work/
+outputs/
+*.log
+.DS_Store
+**/node_modules/
+**/dist/
+**/*.tsbuildinfo
+agentcore/.cache/
+agentcore/.cli/
+agentcore/cdk/cdk.out/
+agentcore/.env.local

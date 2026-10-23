@@ -1,0 +1,26 @@
+{
+  "name": "yuexu-channel-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AWS CDS inbound/outbound orchestrator for Yuexu",
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.1156.0",
+    "@aws-sdk/client-dynamodb": "^3.1156.0",
+    "@aws-sdk/client-pinpoint-sms-voice-v2": "^3.1156.0",
+    "@aws-sdk/client-sesv2": "^3.1156.0",
+    "@aws-sdk/client-socialmessaging": "^3.1156.0",
+    "@aws-sdk/lib-dynamodb": "^3.1156.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
+    "typescript": "~5.6.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

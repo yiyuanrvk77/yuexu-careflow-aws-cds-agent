@@ -1,0 +1,41 @@
+{
+  "name": "YuexuCareFlow",
+  "version": 2,
+  "managedBy": "CDK",
+  "runtimes": [
+    {
+      "name": "appointment",
+      "build": "Container",
+      "modelProvider": "Bedrock",
+      "entrypoint": "main.js",
+      "codeLocation": "app/agent",
+      "dockerfile": "Dockerfile",
+      "protocol": "HTTP"
+    }
+  ],
+  "memories": [
+    {
+      "name": "agentMemory",
+      "eventExpiryDuration": 30,
+      "strategies": [
+        {
+          "type": "SEMANTIC",
+          "namespaceTemplates": ["/users/{actorId}/facts"]
+        },
+        {
+          "type": "USER_PREFERENCE",
+          "namespaceTemplates": ["/users/{actorId}/preferences"]
+        },
+        {
+          "type": "SUMMARIZATION",
+          "namespaceTemplates": ["/summaries/{actorId}/{sessionId}"]
+        },
+        {
+          "type": "EPISODIC",
+          "namespaceTemplates": ["/episodes/{actorId}/{sessionId}"],
+          "reflectionNamespaceTemplates": ["/episodes/{actorId}"]
+        }
+      ]
+    }
+  ]
+}

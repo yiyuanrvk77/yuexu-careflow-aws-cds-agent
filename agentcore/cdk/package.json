@@ -1,0 +1,24 @@
+{
+  "name": "yuexu-agentcore-cdk",
+  "version": "1.0.0",
+  "private": true,
+  "bin": {
+    "cdk": "dist/bin/cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "npm run build && cdk",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "@aws/agentcore-cdk": "1.0.0",
+    "aws-cdk-lib": "~2.269.0",
+    "constructs": "~10.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "~24.13.3",
+    "aws-cdk": "~2.1126.0",
+    "typescript": "~5.9.3"
+  }
+}

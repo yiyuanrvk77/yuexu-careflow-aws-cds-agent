@@ -1,0 +1,33 @@
+{
+  "name": "yuexu-appointment-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Conversation-first appointment operations agent for AWS CDS and Bedrock AgentCore.",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "build:agent": "npm --prefix app/agent run build",
+    "build:lambda": "npm --prefix lambda run build",
+    "build:cdk": "npm --prefix agentcore/cdk run build",
+    "build:aws": "agentcore build",
+    "seed": "node scripts/seed-demo.mjs",
+    "verify:aws": "node scripts/verify-aws-build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@aws/agentcore": "^1.0.0",
+    "@types/aws-lambda": "^8.10.164"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.1156.0",
+    "@aws-sdk/client-dynamodb": "^3.1156.0",
+    "@aws-sdk/client-pinpoint-sms-voice-v2": "^3.1156.0",
+    "@aws-sdk/client-sesv2": "^3.1156.0",
+    "@aws-sdk/client-socialmessaging": "^3.1156.0",
+    "@aws-sdk/lib-dynamodb": "^3.1156.0"
+  }
+}
